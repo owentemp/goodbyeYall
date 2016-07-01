@@ -43,11 +43,13 @@ class NavBar extends React.Component{
             <LinkContainer to={{pathname:'/Package/Seven Natural Wonders'}} className="navbar-button"><MenuItem eventKey={3.2}><div>Seven Natural Wonders</div></MenuItem></LinkContainer>
           </NavDropdown>
           <AirportDropdown / >
-          { this.props.isLoggedIn ?
-            <NavDropdown className="navbar-button" eventKey={4} href="#" id="basic-nav-dropdown" title={<img className='avatar' src={this.profilePhoto}></img>}>
-              <MenuItem eventKey={4.1}><LinkContainer to={{pathname:'/Preferences'}} className="navbar-button"><div>Preferences</div></LinkContainer></MenuItem>
-              <MenuItem eventKey={4.2} className="logout-button"><LinkContainer to={{pathname:'/Preferences'}} className="navbar-button" ><div onClick={this.logout.bind(this)}>Logout</div></LinkContainer></MenuItem>
-            </NavDropdown>:null}
+          {
+            this.props.isLoggedIn ?
+              <NavDropdown className="navbar-button" eventKey={4} href="#" id="basic-nav-dropdown" title={<img className='avatar' src={this.profilePhoto}></img>}>
+                <MenuItem eventKey={4.1}><LinkContainer to={{pathname:'/Preferences'}} className="navbar-button"><div>Preferences</div></LinkContainer></MenuItem>
+                <MenuItem eventKey={4.2} className="logout-button"><LinkContainer to={{pathname:'/Preferences'}} className="navbar-button" ><div onClick={this.logout.bind(this)}>Logout</div></LinkContainer></MenuItem>
+              </NavDropdown>:null
+          }
          { !this.props.isLoggedIn ? <a href={facebookAuthUrl}><img className="fb-login-button" src="/assets/images/facebookLoginBtn.png" /></a> : null}
         </Nav>
       </Navbar>

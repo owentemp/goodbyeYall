@@ -41,7 +41,6 @@ class CardBox extends React.Component {
 		}
 	}
 	render() {
-		// console.log('line 38 containers/cardBox.js params of package/:package_name', this.props.params.package_name);
 		if (this.props.fetching){
 			return (
 				<div className='seven-view'> 
@@ -50,7 +49,8 @@ class CardBox extends React.Component {
 						<div id="loader"><Loading type='spokes' color='#333' /></div>
 					</div>
 				</div>)
-		}else{
+		}
+		else{
 			return(			
 			<div className='seven-view'>
 				<CardTitle title={this.props.package_name} /> 
@@ -58,7 +58,6 @@ class CardBox extends React.Component {
 			</div>
 		)
 		}
-
 	}
 }
 

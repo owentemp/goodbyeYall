@@ -1,8 +1,8 @@
 'use strict'
-//
-// KNEX database library
-// plus additional database helper functions
-//
+
+/**
+ * knex database connection and its helper function
+ */
 let path = require('path');
 
 let config = require('./knexfile');

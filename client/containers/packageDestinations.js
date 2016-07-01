@@ -7,9 +7,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {FETCH_PACKAGE, fetchPackage} from '../actions/fetchPackage';
 
-// this componenet need to listen to the state.
-// in the initial state, it should render the hard coded data
-
 class PackageDestinations extends React.Component {
 	render() {
 		return(

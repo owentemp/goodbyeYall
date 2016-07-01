@@ -7,9 +7,15 @@ import { IS_FETCHING } from '../actions/isFetching'
 
 let INITIAL_STATE = { passive: [], active: [], package_name:'', fetching:false};
 
+
+/**
+ * airport reducer that change set the state of destination
+ * @param {object} action - { type: {string}, paylaod : {object} }
+ */
+
 export default function (state = INITIAL_STATE, action) {
-	// console.log('line 9 reducers/reducers_destination.js state is ',state)
-	// console.log('line 10 reducers/reducers_destination.js action is',action)
+	// console.log('line 17 reducers/reducers_destination.js state is ',state)
+	// console.log('line 18 reducers/reducers_destination.js action is',action)
   switch (action.type){
 		case SET_ACTIVE_DESTINATION:
     	let newState = {};

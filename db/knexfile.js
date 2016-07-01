@@ -4,6 +4,12 @@ if (process.env.NODE_ENV!=="production"){
 }
 
 
+/**
+ * airport reducer that change set the state of destination
+ * @param {string} process.env.DATABASE_URL - connection string to pg database
+ * @param {string} api.PG_CONNECTION_STRING - connection string to pg database
+ */
+
 module.exports = {
   development: {
     client: 'pg',

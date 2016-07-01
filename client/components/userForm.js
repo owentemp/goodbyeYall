@@ -36,7 +36,8 @@ let UserForm = React.createClass ({
       let fb_id = localStorage.getItem("goodbyeyall.fb_id");
       let qs = queryString.parse(window.location.hash);
       let token = qs.access_token;
-      if (token && !fb_id){ // if has token but no fb_id, just need to check if user had registered and in the db
+      if (token && !fb_id){
+        // if has token but no fb_id, just need to check if user had registered and in the db
         axios.get(`/user_prefs/is_exist/${token}`)
           .then((resp)=>{
             // console.log('line 35 is user exist', data)
@@ -46,12 +47,11 @@ let UserForm = React.createClass ({
               localStorage.setItem("goodbyeyall.profile_photo", resp.data.profile_photo);
               //fetch user preferences from db to repopulate form
               this.fetchPrefsByFB_ID(fb_id)
-            }else{
-              //nothing. no state change
             }
           })
       }
-      if (fb_id){ //already logged in
+      if (fb_id){
+        //already logged in
         this.fetchPrefsByFB_ID(fb_id)
       }
     },
@@ -66,7 +66,6 @@ let UserForm = React.createClass ({
             localStorage.setItem('goodbyeyall.fb_id',response.data.fb_id);
             let currentPhoto = localStorage.getItem('goodbyeyall.profile_photo');
             (currentPhoto===undefined || currentPhoto==="undefined") ? null : localStorage.setItem('goodbyeyall.profile_photo',response.data.profile_photo);
-
           }else{
             //throw error here?
           }
@@ -75,7 +74,6 @@ let UserForm = React.createClass ({
           window.location.assign('/')
         })
     },
-
     render:function(){
         return (
             <div>
@@ -116,7 +114,6 @@ let UserForm = React.createClass ({
                     <Checkbox checked={this.state['Seven Natural Wonders']} onChange={()=>{this.setState({'Seven Natural Wonders':!this.state['Seven Natural Wonders']});}}>
                       Seven Natural Wonders of the World
                     </Checkbox>
-
                     <Button className="prefs-submit-button btn" type="submit">
                       Submit
                     </Button>
@@ -124,7 +121,6 @@ let UserForm = React.createClass ({
             </div>
                    )
     }
-
 })
 
 export default UserForm;
