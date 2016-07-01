@@ -43,17 +43,17 @@ class CardBox extends React.Component {
 	render() {
 		if (this.props.fetching){
 			return (
-				<div className='seven-view'> 
-					<div className="card-title"> 
-						✈  ✈  ✈ fetching  ✈  ✈  ✈ 
+				<div className='seven-view'>
+					<div className="card-title">
+						✈  ✈  ✈ wheels up  ✈  ✈  ✈
 						<div id="loader"><Loading type='spokes' color='#333' /></div>
 					</div>
 				</div>)
 		}
 		else{
-			return(			
+			return(
 			<div className='seven-view'>
-				<CardTitle title={this.props.package_name} /> 
+				<CardTitle title={this.props.package_name} />
 				<PackageDestinations  active={this.props.active} passive={this.props.passive} package_name={this.props.params.package_name} className='row' />
 			</div>
 		)
@@ -76,5 +76,5 @@ function mapDispatchToProps( dispatch ){
 }
 
 
- 
+
 export default connect(mapStateToProps, mapDispatchToProps)(CardBox);
